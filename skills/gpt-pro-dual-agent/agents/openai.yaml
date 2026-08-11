@@ -1,0 +1,4 @@
+interface:
+  display_name: "GPT Pro 双代理协作"
+  short_description: "Codex 总控 ChatGPT Pro 研究、实现与独立验收"
+  default_prompt: "使用 $gpt-pro-dual-agent，让 Codex 总控并与 ChatGPT Pro 协作完成此任务，独立验收后再交付。"

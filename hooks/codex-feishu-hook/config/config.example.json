@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "webhook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/replace-me",
+  "sign_secret": "",
+  "tag": "",
+  "include_summary": true,
+  "summary_max_chars": 600,
+  "include_cwd": true
+}

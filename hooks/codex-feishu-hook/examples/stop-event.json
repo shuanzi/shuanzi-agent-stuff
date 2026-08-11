@@ -1,0 +1,8 @@
+{
+  "hook_event_name": "Stop",
+  "session_id": "example-session-001",
+  "turn_id": "example-turn-002",
+  "cwd": "/tmp/example-project",
+  "stop_hook_active": false,
+  "last_assistant_message": "示例 Stop Hook 已完成。"
+}

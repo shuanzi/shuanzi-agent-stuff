@@ -1,0 +1,24 @@
+{
+  "profile_name": "personal-ledger",
+  "base_url": "https://my.feishu.cn/base/JOTPbJQrea7ImhsQgGecL7EBnhb?table=tblajbZ1eFBrjOi2&view=vewuCoyW8X",
+  "table_name": "总明细",
+  "view_name_template": "{year} 年明细",
+  "owner_name": "戴希铨",
+  "fields": {
+    "remark": "备注",
+    "date": "日期",
+    "amount": "金额",
+    "direction": "收支",
+    "owner": "责任人",
+    "project": "项目"
+  },
+  "values": {
+    "expense": "支出"
+  },
+  "dedupe_fields": [
+    "日期",
+    "金额",
+    "收支",
+    "责任人"
+  ]
+}
