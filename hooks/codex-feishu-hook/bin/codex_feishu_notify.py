@@ -135,7 +135,7 @@ def _message_parts(
     )
 
     try:
-        max_chars = int(config.get("summary_max_chars", 600))
+        max_chars = int(config.get("summary_max_chars", 4000))
     except (TypeError, ValueError) as error:
         raise ValueError("summary_max_chars must be an integer") from error
     if not 0 <= max_chars <= 4000:

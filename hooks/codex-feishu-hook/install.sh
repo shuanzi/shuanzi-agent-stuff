@@ -14,7 +14,7 @@ WEBHOOK_URL=""
 SIGN_SECRET=""
 INCLUDE_SUMMARY=true
 INCLUDE_CWD=true
-SUMMARY_MAX_CHARS=600
+SUMMARY_MAX_CHARS=4000
 TAG=""
 SEND_TEST=false
 
@@ -88,8 +88,8 @@ read_yes_no "发送绝对工作目录？[Y/n]: " y
 INCLUDE_CWD="$REPLY"
 
 while true; do
-  read_value "摘要上限（0～4000，默认 600）: "
-  SUMMARY_MAX_CHARS="${REPLY:-600}"
+  read_value "摘要上限（0～4000，默认 4000）: "
+  SUMMARY_MAX_CHARS="${REPLY:-4000}"
   if [[ "$SUMMARY_MAX_CHARS" =~ ^[0-9]+$ ]] && python3 - "$SUMMARY_MAX_CHARS" <<'PY'
 import sys
 

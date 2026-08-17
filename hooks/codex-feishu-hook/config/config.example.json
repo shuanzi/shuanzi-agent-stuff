@@ -4,6 +4,6 @@
   "sign_secret": "",
   "tag": "",
   "include_summary": true,
-  "summary_max_chars": 600,
+  "summary_max_chars": 4000,
   "include_cwd": true
 }
