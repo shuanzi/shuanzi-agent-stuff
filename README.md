@@ -24,6 +24,10 @@ Codex 完成一轮工作后，通过飞书群自定义机器人发送完成通�
 
 ## Skills
 
+### [codex-thread-orchestration](skills/codex-thread-orchestration/)
+
+编排包含多个阶段或子任务的 Codex thread：负责任务拆解、隔离 branch/worktree、依赖调度、变更集成、校验和最终汇报。
+
 ### [gpt-pro-dual-agent](skills/gpt-pro-dual-agent/)
 
 组织高可信的双代理协作：Codex 担任总负责人，将已登录的 ChatGPT Pro 对话作为外部高级研究/设计/实现代理。涵盖协作契约、GitHub connector 或脱敏源码包提供上下文、长任务监控与会话恢复、外部补丁的本地独立审查与验收。
