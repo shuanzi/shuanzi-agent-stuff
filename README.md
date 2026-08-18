@@ -46,5 +46,16 @@ Codex 完成一轮工作后，通过飞书群自定义机器人发送完成通�
 
 ## 使用方式
 
-- **Hooks**：进入对应目录，按各自 README 运行 `install.sh` 安装。
-- **Skills**：将对应目录放入 Agent 客户端的 skills 加载路径（如 `~/.agents/skills/`），由客户端按 `SKILL.md` 的 `description` 自动匹配触发。
+在仓库根目录运行交互式安装脚本：
+
+```bash
+./install.sh
+```
+
+安装器会自动识别当前环境已安装的 Agent（Claude Code、Codex），也支持安装到通用 Agent 目录（`~/.agents/`）；可逐项勾选要安装的 hooks 和 skills。重复执行时同名内容会被覆盖，以最后一次安装为准。
+
+也可以用环境变量覆盖目标目录：`CLAUDE_HOME`、`CODEX_HOME`、`AGENTS_HOME`。
+
+注意：当前 hooks 仅支持 Codex；选择其他 Agent 时会自动跳过 hooks，只安装 skills。
+
+如需单独安装，仍可按各子目录 README 操作：Hooks 进入对应目录运行 `install.sh`；Skills 将对应目录放入 Agent 客户端的 skills 加载路径，由客户端按 `SKILL.md` 的 `description` 自动匹配触发。
