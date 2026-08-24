@@ -5,6 +5,7 @@
 ## 仓库结构
 
 ```text
+├── codex_pets/ # Codex 自定义 Pet 包与可追溯生成记录
 ├── hooks/     # Codex 等客户端的 Hook 工具包
 └── skills/    # 可复用的 Agent Skill（含 SKILL.md 定义）
 ```
@@ -21,6 +22,28 @@ Codex 完成一轮工作后，通过飞书群自定义机器人发送完成通�
 - 安装脚本幂等合并 `~/.codex/hooks.json`，不覆盖无关 Hook。
 
 使用与安装详见 [hooks/codex-feishu-hook/README.md](hooks/codex-feishu-hook/README.md)。
+
+## Codex Pets
+
+`codex_pets/` 存放采用 Codex v2 sprite 合同的自定义 Pet：每个最终 atlas 为 `1536×2288` 的 `8×11` 网格，并在 `pet.json` 中声明 `spriteVersionNumber: 2`。
+
+- `niulai/`：可直接安装的黄角牛 Pet 包。
+- `claude-code-3d-pet-run/`：Claude Code 3D 的可追溯生成记录；最终 v2 atlas 位于 `final/spritesheet-extended.webp`，并保留 prompts、逐帧素材和 QA 证据。
+
+可按以下方式安装：
+
+```bash
+# 黄角牛
+PET_DIR="${CODEX_HOME:-$HOME/.codex}/pets/huangjiaoniu"
+mkdir -p "$PET_DIR"
+cp codex_pets/niulai/pet.json codex_pets/niulai/spritesheet.webp "$PET_DIR/"
+
+# Claude Code 3D
+PET_DIR="${CODEX_HOME:-$HOME/.codex}/pets/claude-code-3d"
+mkdir -p "$PET_DIR"
+cp codex_pets/claude-code-3d-pet-run/final/pet.json "$PET_DIR/"
+cp codex_pets/claude-code-3d-pet-run/final/spritesheet-extended.webp "$PET_DIR/spritesheet.webp"
+```
 
 ## Skills
 

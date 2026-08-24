@@ -1,0 +1,142 @@
+{
+  "ok": true,
+  "frames_root": "/Users/xiquandai/.codex/worktrees/b799/codex_pats/claude-code-3d-pet-run/qa/rows/running-right/frames",
+  "states": [
+    "running-right"
+  ],
+  "errors": [],
+  "warnings": [],
+  "rows": [
+    {
+      "state": "running-right",
+      "expected_frames": 8,
+      "actual_frames": 8,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "/Users/xiquandai/.codex/worktrees/b799/codex_pats/claude-code-3d-pet-run/qa/rows/running-right/frames/running-right/00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21395,
+          "bbox": [
+            5,
+            31,
+            187,
+            177
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 212
+        },
+        {
+          "index": 1,
+          "file": "/Users/xiquandai/.codex/worktrees/b799/codex_pats/claude-code-3d-pet-run/qa/rows/running-right/frames/running-right/01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 20696,
+          "bbox": [
+            5,
+            28,
+            187,
+            180
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 221
+        },
+        {
+          "index": 2,
+          "file": "/Users/xiquandai/.codex/worktrees/b799/codex_pats/claude-code-3d-pet-run/qa/rows/running-right/frames/running-right/02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 22208,
+          "bbox": [
+            5,
+            26,
+            187,
+            181
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 252
+        },
+        {
+          "index": 3,
+          "file": "/Users/xiquandai/.codex/worktrees/b799/codex_pats/claude-code-3d-pet-run/qa/rows/running-right/frames/running-right/03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21785,
+          "bbox": [
+            5,
+            26,
+            187,
+            182
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 232
+        },
+        {
+          "index": 4,
+          "file": "/Users/xiquandai/.codex/worktrees/b799/codex_pats/claude-code-3d-pet-run/qa/rows/running-right/frames/running-right/04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21635,
+          "bbox": [
+            5,
+            25,
+            187,
+            182
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 245
+        },
+        {
+          "index": 5,
+          "file": "/Users/xiquandai/.codex/worktrees/b799/codex_pats/claude-code-3d-pet-run/qa/rows/running-right/frames/running-right/05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 22172,
+          "bbox": [
+            5,
+            25,
+            187,
+            182
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 220
+        },
+        {
+          "index": 6,
+          "file": "/Users/xiquandai/.codex/worktrees/b799/codex_pats/claude-code-3d-pet-run/qa/rows/running-right/frames/running-right/06.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21077,
+          "bbox": [
+            5,
+            26,
+            187,
+            181
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 249
+        },
+        {
+          "index": 7,
+          "file": "/Users/xiquandai/.codex/worktrees/b799/codex_pats/claude-code-3d-pet-run/qa/rows/running-right/frames/running-right/07.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21902,
+          "bbox": [
+            5,
+            24,
+            187,
+            183
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 233
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "verdict": "pass",
+  "major_issues": [],
+  "minor_warnings": [
+    "000→022.5 与 157.5→180 是像素 diff 数值 outlier，但视觉未见身份、尺度、基线或光照突跳。"
+  ],
+  "continuity_resolution": "alpha-hole warnings 对应四脚之间的天然透明间隙。157.5→180 与 337.5→000 均为普通一步；高 diff 主要来自面板位移及轮廓/高光抗锯齿变化，视觉可接受。",
+  "notes": "row10 八帧面板间距单调收窄再展开，中心 x/y 连续变化；cardinal 清楚；身份、尺度、基线、四脚双臂和光照一致。"
+}
