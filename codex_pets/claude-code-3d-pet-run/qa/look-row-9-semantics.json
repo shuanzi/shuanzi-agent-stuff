@@ -1,0 +1,6 @@
+{
+  "verdict": "pass",
+  "major_issues": [],
+  "minor_warnings": [],
+  "notes": "8格身份、四脚双臂、尺度、基线和光照稳定；panel pair center 从000连续右移至090，再连续回摆向180；panel y 单调下移；间距63、54.5、46.9、38.9、31.5、39.5、47、55.5px平滑先降后升；000与090匹配已批准 cardinal 语义。"
+}

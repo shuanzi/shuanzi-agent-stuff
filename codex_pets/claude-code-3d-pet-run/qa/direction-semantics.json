@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "cardinals": {
+    "000": "up",
+    "090": "screen-right",
+    "180": "down",
+    "270": "screen-left"
+  },
+  "loop": "pass",
+  "blind_hard_gates": "pass",
+  "review_warnings": [
+    "112.5 与 247.5 的垂直分量在隔离盲审中存在轻微歧义；带标签连续性复核通过。"
+  ]
+}

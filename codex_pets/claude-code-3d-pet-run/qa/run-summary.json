@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "completed_at": "2026-07-16T03:14:32Z",
+  "pet_id": "claude-code-3d",
+  "display_name": "Claude Code 3D",
+  "sprite_version_number": 2,
+  "atlas": {
+    "columns": 8,
+    "rows": 11,
+    "width": 1536,
+    "height": 2288,
+    "sha256": "e4517bd1b49b42b1577fc1685c6192d59fae4fb56eb0482cf3d24f54baa52bcf"
+  },
+  "installed_path": "/Users/xiquandai/.codex/pets/claude-code-3d",
+  "validation": {
+    "errors": [],
+    "warnings": [],
+    "transparent_rgb_residue_pixels": 0
+  },
+  "visual_qa": {
+    "verdict": "pass",
+    "cardinal_hard_gates": "pass",
+    "direction_loop": "pass",
+    "blind_review": "pass_with_review_warnings_resolved"
+  }
+}
