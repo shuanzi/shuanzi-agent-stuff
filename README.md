@@ -47,6 +47,12 @@ cp codex_pets/claude-code-3d-pet-run/final/spritesheet-extended.webp "$PET_DIR/s
 
 ## Skills
 
+### [model-service-benchmark](skills/model-service-benchmark/)
+
+依据科研 Agent 模型推理服务 Benchmark 规范 revision 85，先确定目标、阶段和预算，再核查已有生成式 LLM 服务，执行性能摸底、容量边界验证或持续运行评估，并产出可复核中文报告。包含规范矩阵、指标口径、A–E 阶段、报告模板与现有工具能力说明；不附带测试客户端或默认部署服务。
+
+调用：`$model-service-benchmark`。可通过下方交互式安装器安装，或单独复制技能目录到客户端的 skills 加载路径。
+
 ### [codex-thread-orchestration](skills/codex-thread-orchestration/)
 
 编排包含多个阶段或子任务的 Codex thread：负责任务拆解、隔离 branch/worktree、依赖调度、变更集成、校验和最终汇报。
