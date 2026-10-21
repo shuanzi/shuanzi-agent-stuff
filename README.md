@@ -53,6 +53,12 @@ cp codex_pets/claude-code-3d-pet-run/final/spritesheet-extended.webp "$PET_DIR/s
 
 调用：`$model-service-benchmark`。可通过下方交互式安装器安装，或单独复制技能目录到客户端的 skills 加载路径。
 
+### [industry-report](skills/industry-report/)
+
+编写、审阅或修改产业与政策专题研究报告：从共性问题组织证据、章节论证和案例分析，分别判断外审问题与建议改法，并按当前授权保护修改范围。包含研究、审阅、真实改写示例和按需使用的交付配套方法。
+
+调用：`$industry-report`。可通过下方交互式安装器安装，或单独复制技能目录到客户端的 skills 加载路径。
+
 ### [codex-thread-orchestration](skills/codex-thread-orchestration/)
 
 编排包含多个阶段或子任务的 Codex thread：负责任务拆解、隔离 branch/worktree、依赖调度、变更集成、校验和最终汇报。
