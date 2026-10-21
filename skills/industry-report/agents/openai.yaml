@@ -1,0 +1,4 @@
+interface:
+  display_name: "产业与政策专题报告"
+  short_description: "围绕产业与政策问题组织研究、证据和论证，支持报告编写、审阅及授权范围内的修改"
+  default_prompt: "使用 $industry-report，按本次目标完成产业或政策专题报告的研究、审阅或修改，并说明证据和适用条件。"
