@@ -47,6 +47,14 @@ cp codex_pets/claude-code-3d-pet-run/final/spritesheet-extended.webp "$PET_DIR/s
 
 ## Skills
 
+### [travel-reimbursement](skills/travel-reimbursement/)
+
+依据中国科学院软件研究所智能软件研究中心的离线差旅资料，核对行程、费用和补助，填写原版 Word 报销单并整理材料包及缺项。地点、时间和合计只填原有空位，付款说明放在对应费用下方，单位结算与个人回款分别核对。
+
+调用：`$travel-reimbursement`。可由下方交互式安装器安装，或复制完整技能目录到客户端的 skills 加载路径。包含脱敏空白模板、离线参考及仅依赖 Python 标准库的填表脚本；规则来源维护日期为 2026-10-23，未重新核验现行效力，其他单位不能直接套用。整理材料不包含发送、ARP 提交或支付。
+
+聚焦测试：`python3 -m unittest discover -s skills/travel-reimbursement/scripts -p 'test_*.py' -v`。
+
 ### [model-service-benchmark](skills/model-service-benchmark/)
 
 依据科研 Agent 模型推理服务 Benchmark 规范 revision 85，先确定目标、阶段和预算，再核查已有生成式 LLM 服务，执行性能摸底、容量边界验证或持续运行评估，并产出可复核中文报告。包含规范矩阵、指标口径、A–E 阶段、报告模板与现有工具能力说明；不附带测试客户端或默认部署服务。

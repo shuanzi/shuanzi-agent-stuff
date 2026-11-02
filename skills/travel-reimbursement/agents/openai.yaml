@@ -1,0 +1,4 @@
+interface:
+  display_name: "差旅报销填写与资料整理"
+  short_description: "使用包内离线规则填写软件所差旅报销单，核对费用、补助并整理资料"
+  default_prompt: "使用 $travel-reimbursement，依据包内离线制度以及出差申请、票据和付款记录填写差旅报销单，整理资料包并列出缺项。"
