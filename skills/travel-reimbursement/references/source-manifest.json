@@ -1,0 +1,194 @@
+{
+  "snapshot_date": "2026-11-02",
+  "variant": "privacy-sanitized",
+  "rules_source_date": "2026-10-23",
+  "current_policy_validity": "not_reverified",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "78ff3c2c405718eedb2d6d493845f528408f9205fb089175fc7fbf7fc00f8356",
+      "bytes": 220
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "2c6a5d27615df04010923ac632d0a82f26ce6cdb9212723b35a1e83e6d1d4b97",
+      "bytes": 7929
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "6d92680b8a23c4d73a7e6b69f18472183fa4d30f554a28fa4ecdc3bd22369946",
+      "bytes": 355
+    },
+    {
+      "path": "assets/出差审批单.docx",
+      "sha256": "f73f2634db1a60f42f7d664d233cbe220909fc228a3b8d9e3d07e46cbf963878",
+      "bytes": 10360
+    },
+    {
+      "path": "assets/因公临时出国任务和预算审批意见表.docx",
+      "sha256": "7a573850a0fd72d75c30c071be76296008c5fdece61ec8d343e29a679885ea39",
+      "bytes": 8051
+    },
+    {
+      "path": "assets/境外住宿标准调整_2017.pdf",
+      "sha256": "d496861455c86cfafd9ff2f5bd489962e2d10a03823fb6d95a407bb88945fe4b",
+      "bytes": 1715242
+    },
+    {
+      "path": "assets/境外费用标准总表.pdf",
+      "sha256": "a2f55522f10a55fb5090dc81d14669114e618e8c2dfea42a9ed5eb0a76a07945",
+      "bytes": 6306833
+    },
+    {
+      "path": "assets/外事事前公示信息表.docx",
+      "sha256": "940efcdacfc09d6fb6eb89dada753122dfb76cbf8f9c0d1b055c0cb3dcd92ace",
+      "bytes": 12151
+    },
+    {
+      "path": "assets/差旅报销单.docx",
+      "sha256": "b1ff704d0d095b6861fa989e39a94d7e698521876c444a82957cb770ff0017d9",
+      "bytes": 22327
+    },
+    {
+      "path": "assets/报销信息采集表.md",
+      "sha256": "bbeea091a28104b899008c8b42eab848c071efc3f235d502a91ecb9a710b232d",
+      "bytes": 1526
+    },
+    {
+      "path": "assets/普通报销单.docx",
+      "sha256": "e182f26160b725e81baf0aa604aa443154e2f3294fd875fee840e8f68c98dbed",
+      "bytes": 11046
+    },
+    {
+      "path": "assets/费用与材料台账.csv",
+      "sha256": "ebe84918b62c422f3b28435fd5697544dcf5bb0f23960acc8b5594ca95d9e6de",
+      "bytes": 298
+    },
+    {
+      "path": "references/attachments/出差审批单-字段.md",
+      "sha256": "5dadc89c80f4658b564fb2d33de08ec01e65fd584ac7d48cf98bf8c031a4595a",
+      "bytes": 709
+    },
+    {
+      "path": "references/attachments/境外住宿标准调整_2017-OCR.md",
+      "sha256": "5b730bb28188e13d622ce93fa6bca12b228ac920b4e72df9961378bd95798c17",
+      "bytes": 11285
+    },
+    {
+      "path": "references/attachments/境外费用标准总表-OCR.md",
+      "sha256": "52496e785e390383f6ad3cfeda2ded6dee015097f03f422f473994d6a70c4f78",
+      "bytes": 33131
+    },
+    {
+      "path": "references/attachments/外事事前公示信息表-字段.md",
+      "sha256": "c24d3a05a9c61eae8ea33e4055bab57e75e61e41122be746372cba63be403fb0",
+      "bytes": 1578
+    },
+    {
+      "path": "references/attachments/外事流程通知-OCR.md",
+      "sha256": "4e544ac49d3e853c472801cd69305c49745007e76b72c95f1499ec7e4a30f5ab",
+      "bytes": 16849
+    },
+    {
+      "path": "references/attachments/差旅报销单-字段.md",
+      "sha256": "8e0084a6fe22dfd816c72f174e62e5af4077c60e08b1716e8781ea80561ed2fd",
+      "bytes": 2039
+    },
+    {
+      "path": "references/attachments/普通报销单-字段.md",
+      "sha256": "102ed1416d7bd4179dc95b009dd2337b9e6a568907834480558cac674965ba64",
+      "bytes": 1428
+    },
+    {
+      "path": "references/data/境外住宿标准调整_2017.csv",
+      "sha256": "74b1bcf75eb8af023215b51ccab7ad41cd7b2c4a884a15c1dd1c263ba8296bce",
+      "bytes": 4556
+    },
+    {
+      "path": "references/data/境外费用标准总表.csv",
+      "sha256": "c9cf81fe88479959adad7b12f1d1871cf0ab02bba1b00151acd9f754f47b62a6",
+      "bytes": 24495
+    },
+    {
+      "path": "references/domestic.md",
+      "sha256": "1fd7a5698f47c87e1fb00d11c75a7a0bffc997982a08a21be4077161903d1eb9",
+      "bytes": 9089
+    },
+    {
+      "path": "references/forms-and-files.md",
+      "sha256": "3ea5d0243882b6112651a27ca2382692618ab66b24e9bc1d2b3afb20fa9d6bcb",
+      "bytes": 8674
+    },
+    {
+      "path": "references/lodging-sheet1.csv",
+      "sha256": "44561d0ea4fc7a2e51e129dfd8be13b428df7a4d6dfd3f60a0d13dba4839e8ba",
+      "bytes": 5764
+    },
+    {
+      "path": "references/overseas-rates-index.md",
+      "sha256": "e67eeaaf3b7916c7392be18bf43ed566400c5f7b68a94c5f04ad0733dfb73a78",
+      "bytes": 32186
+    },
+    {
+      "path": "references/policies/S1-出差申请与预订.md",
+      "sha256": "dce9f8519bff322be500e06798393bd36693d1b3c00d7999ac3ee6aa881cb7fd",
+      "bytes": 7188
+    },
+    {
+      "path": "references/policies/S2-差旅报销.md",
+      "sha256": "71c51f07e4bf2b7caca9ba281c0e9b3e1b1bcc47a9c740026acfa48706e2afb6",
+      "bytes": 8898
+    },
+    {
+      "path": "references/policies/S3-R专项报销特殊事宜.md",
+      "sha256": "8d64527528e4f122d79c6f7ccc5e60283841e7dd999c7e8b4cc1c371196e1e2a",
+      "bytes": 550
+    },
+    {
+      "path": "references/policies/S4-出国境流程.md",
+      "sha256": "fb8421b86cd06df78d701e9241231c76851dff2d762038655635cf2480f5a058",
+      "bytes": 6042
+    },
+    {
+      "path": "references/policies/S5-市内出差打车报销.md",
+      "sha256": "06e79cbd538a32e4fa64df7a35d1b2a9c8811b8c2285a84d2b1c89642050f026",
+      "bytes": 3667
+    },
+    {
+      "path": "references/policies/S6-因公临时出国任务和预算审批意见表.md",
+      "sha256": "b9635b1140f240925bd03c35dc82498eddc579de1b59197ec0c8349365b966b1",
+      "bytes": 3019
+    },
+    {
+      "path": "references/sources.md",
+      "sha256": "45cc03496084e54913871726f50a7d8044cb581c8759d1502a34ea89ca05e76d",
+      "bytes": 3872
+    },
+    {
+      "path": "references/special-cases.md",
+      "sha256": "c18eb07ceb8bdd15daf946b04b63ad5f58eb35a406f6921b6db9501412743018",
+      "bytes": 6773
+    },
+    {
+      "path": "scripts/fill_domestic_form.py",
+      "sha256": "def0c878626c3d814584282fe755e978edac44ed6ac51b5aebe8f0e56f1ce742",
+      "bytes": 15380
+    },
+    {
+      "path": "scripts/test_fill_domestic_form.py",
+      "sha256": "cd9f448d0e53675cf5aadef172685025983fd9719f01c148ea2eb4278cd84550",
+      "bytes": 13302
+    }
+  ],
+  "excluded_categories": [
+    "26 source screenshots",
+    "2 original XLS files with author metadata; source Sheet1 CSV retained",
+    "original notice PDF with contacts; sanitized text retained"
+  ],
+  "limitations": [
+    "Historical UI screenshots are unavailable",
+    "Raw domestic XLS is not included; obtain authorized original for disputed rules",
+    "Template-preserving structural tests pass; generated forms still need case-specific visual and eligibility checks"
+  ],
+  "derived_on": "2026-10-26"
+}

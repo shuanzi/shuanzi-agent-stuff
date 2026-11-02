@@ -1,0 +1,4 @@
+# 离线引用及表格是来源快照，保留换行和空白字节；脚本、说明仍使用常规检查。
+references/attachments/** -text -whitespace
+references/policies/** -text -whitespace
+*.csv -text -whitespace
