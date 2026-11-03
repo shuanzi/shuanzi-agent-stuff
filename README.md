@@ -69,7 +69,7 @@ cp codex_pets/claude-code-3d-pet-run/final/spritesheet-extended.webp "$PET_DIR/s
 
 ### [codex-thread-orchestration](skills/codex-thread-orchestration/)
 
-编排包含多个阶段或子任务的 Codex thread：负责任务拆解、隔离 branch/worktree、依赖调度、变更集成、校验和最终汇报。
+在用户明确要求时创建、管理或协调独立 Codex 聊天：可只查已有聊天进度，也可隔离并行写入、跟进依赖并按授权集成结果。
 
 ### [gpt-pro-dual-agent](skills/gpt-pro-dual-agent/)
 
@@ -85,7 +85,7 @@ cp codex_pets/claude-code-3d-pet-run/final/spritesheet-extended.webp "$PET_DIR/s
 
 ### [steelman-dialogue](skills/steelman-dialogue/)
 
-按两阶段流程对问题或方案进行双向钢人论证：先重述问题、呈现正反两方最强论证并提出一个关键问题，再基于回答给出判断和行动建议。
+对问题或方案做双向钢人论证。默认先呈现正反两方最强理由并问一个关键问题，再基于回答给出判断和建议；用户要求一次完成时，按现有条件直接判断。
 
 ## 使用方式
 
