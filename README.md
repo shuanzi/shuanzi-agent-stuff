@@ -49,9 +49,9 @@ cp codex_pets/claude-code-3d-pet-run/final/spritesheet-extended.webp "$PET_DIR/s
 
 ### [travel-reimbursement](skills/travel-reimbursement/)
 
-依据中国科学院软件研究所智能软件研究中心的离线差旅资料，核对行程、费用和补助，填写原版 Word 报销单并整理材料包及缺项。地点、时间和合计只填原有空位，付款说明放在对应费用下方，单位结算与个人回款分别核对。
+通过逐轮问答收集人员、行程、票据和支付截图，支持从零开始或先提供一批材料，已有记录时从缺项继续。依据中国科学院软件研究所智能软件研究中心的离线资料核对费用并填写原版 Word，关键电子材料补齐后生成可交给组秘核验的 ZIP，另列账号填写、线下签字和纸质原件交接等人工待办。
 
-调用：`$travel-reimbursement`。可由下方交互式安装器安装，或复制完整技能目录到客户端的 skills 加载路径。包含脱敏空白模板、离线参考及仅依赖 Python 标准库的填表脚本；规则来源维护日期为 2026-10-23，未重新核验现行效力，其他单位不能直接套用。整理材料不包含发送、ARP 提交或支付。
+调用：`$travel-reimbursement 帮我报销这次出差`。可由下方交互式安装器安装，或复制完整技能目录到客户端的 skills 加载路径。包含脱敏空白模板、离线参考及仅依赖 Python 标准库的填表和打包脚本；规则来源维护日期为 2026-10-23，未重新核验现行效力，其他单位不能直接套用。整理材料不包含发送、ARP 提交或支付。
 
 聚焦测试：`python3 -m unittest discover -s skills/travel-reimbursement/scripts -p 'test_*.py' -v`。
 

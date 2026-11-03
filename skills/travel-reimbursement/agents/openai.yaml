@@ -1,4 +1,4 @@
 interface:
-  display_name: "差旅报销填写与资料整理"
-  short_description: "使用包内离线规则填写软件所差旅报销单，核对费用、补助并整理资料"
-  default_prompt: "使用 $travel-reimbursement，依据包内离线制度以及出差申请、票据和付款记录填写差旅报销单，整理资料包并列出缺项。"
+  display_name: "问答式差旅报销助手"
+  short_description: "逐轮问答收集人员、行程、票据和支付截图，补齐关键电子材料后生成给组秘的 ZIP"
+  default_prompt: "使用 $travel-reimbursement 帮我报销这次出差，通过问答收集缺失信息和附件，补齐关键电子材料后生成可以给组秘的 ZIP，并列出人工待办。"

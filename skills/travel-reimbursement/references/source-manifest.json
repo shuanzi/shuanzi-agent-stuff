@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-11-02",
+  "snapshot_date": "2026-11-03",
   "variant": "privacy-sanitized",
   "rules_source_date": "2026-10-23",
   "current_policy_validity": "not_reverified",
@@ -11,13 +11,13 @@
     },
     {
       "path": "SKILL.md",
-      "sha256": "2c6a5d27615df04010923ac632d0a82f26ce6cdb9212723b35a1e83e6d1d4b97",
-      "bytes": 7929
+      "sha256": "45691f4746ef13e5caa25cec90fd50c15a675e4fc4b2885448ef51dd797fd692",
+      "bytes": 9787
     },
     {
       "path": "agents/openai.yaml",
-      "sha256": "6d92680b8a23c4d73a7e6b69f18472183fa4d30f554a28fa4ecdc3bd22369946",
-      "bytes": 355
+      "sha256": "21d6c204b6685c249a22b50fddeb311916b54a65a79fb93a987c238440d0a93d",
+      "bytes": 391
     },
     {
       "path": "assets/出差审批单.docx",
@@ -51,8 +51,8 @@
     },
     {
       "path": "assets/报销信息采集表.md",
-      "sha256": "bbeea091a28104b899008c8b42eab848c071efc3f235d502a91ecb9a710b232d",
-      "bytes": 1526
+      "sha256": "c2e0858dbefff1e518676c69e1d48a18a00910e2b29e83231887471c1bfd6f9c",
+      "bytes": 3645
     },
     {
       "path": "assets/普通报销单.docx",
@@ -116,8 +116,13 @@
     },
     {
       "path": "references/forms-and-files.md",
-      "sha256": "3ea5d0243882b6112651a27ca2382692618ab66b24e9bc1d2b3afb20fa9d6bcb",
-      "bytes": 8674
+      "sha256": "d0edf935a111cc9d342715d5612fa67bd48fd87ac033c0f7f97dafefd8e1cfef",
+      "bytes": 12906
+    },
+    {
+      "path": "references/intake.md",
+      "sha256": "13167919372d1dd52a63ad5652f1e57c24f4d76223895fb69de8f80a324a0aea",
+      "bytes": 6175
     },
     {
       "path": "references/lodging-sheet1.csv",
@@ -161,8 +166,8 @@
     },
     {
       "path": "references/sources.md",
-      "sha256": "45cc03496084e54913871726f50a7d8044cb581c8759d1502a34ea89ca05e76d",
-      "bytes": 3872
+      "sha256": "26f6a062ca25e487f1737ba43a2a099bf63e736bcfc91f3fd6d46633fc5aff4c",
+      "bytes": 4006
     },
     {
       "path": "references/special-cases.md",
@@ -175,9 +180,19 @@
       "bytes": 15380
     },
     {
+      "path": "scripts/package_reimbursement.py",
+      "sha256": "f41200d9fcde6ee3570dc6b6837f482a6c635c2c73db90200f4b7b2de97a6472",
+      "bytes": 5079
+    },
+    {
       "path": "scripts/test_fill_domestic_form.py",
       "sha256": "cd9f448d0e53675cf5aadef172685025983fd9719f01c148ea2eb4278cd84550",
       "bytes": 13302
+    },
+    {
+      "path": "scripts/test_package_reimbursement.py",
+      "sha256": "e4329cffdaa78098c54827a85342021f14ad24b8bf5a7985cba990a91785ae97",
+      "bytes": 9555
     }
   ],
   "excluded_categories": [
