@@ -11,8 +11,8 @@
     },
     {
       "path": "SKILL.md",
-      "sha256": "45691f4746ef13e5caa25cec90fd50c15a675e4fc4b2885448ef51dd797fd692",
-      "bytes": 9787
+      "sha256": "03737d66809d414aab811268f24ee07c3f254cb716bfce1c66cc20974d85cdbc",
+      "bytes": 9800
     },
     {
       "path": "agents/openai.yaml",
