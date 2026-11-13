@@ -202,6 +202,10 @@ multi_select() {
 SELECTED_HOOKS=()
 SELECTED_SKILLS=()
 
+is_home_skill_link() {
+  [[ -L "$1" && "$(readlink "$1")" == ../.home-repo/.agents/skills/* ]]
+}
+
 if [[ "$WANT_HOOKS" == true ]]; then
   HOOK_ITEMS=()
   while IFS= read -r dir; do
@@ -213,13 +217,21 @@ fi
 if [[ "$WANT_SKILLS" == true ]]; then
   SKILL_ITEMS=()
   while IFS= read -r dir; do
-    if [[ -L "$dir" && ! -e "$dir" ]]; then
-      printf '跳过失效的技能链接：%s\n' "$dir" >&2
-    elif [[ -d "$dir" && -f "$dir/SKILL.md" ]]; then
+    if is_home_skill_link "$dir" || [[ -d "$dir" && -f "$dir/SKILL.md" ]]; then
       SKILL_ITEMS+=("$(basename "$dir")")
+    elif [[ -L "$dir" && ! -e "$dir" ]]; then
+      printf '跳过失效的技能链接：%s\n' "$dir" >&2
     fi
   done < <(find "$REPO_DIR/skills" -mindepth 1 -maxdepth 1 \( -type d -o -type l \) | sort)
   multi_select "可安装的 skills：" SELECTED_SKILLS "${SKILL_ITEMS[@]+"${SKILL_ITEMS[@]}"}"
+  for skill in ${SELECTED_SKILLS[@]+"${SELECTED_SKILLS[@]}"}; do
+    dir="$REPO_DIR/skills/$skill"
+    if is_home_skill_link "$dir" && [[ ! -L "$REPO_DIR/.home-repo" || ! -f "$dir/SKILL.md" ]]; then
+      printf '共享技能入口不可用：%s\n' "$dir" >&2
+      printf '请在 Home Repo 根目录运行 python3 scripts/home_paths.py link --repo shuanzi-agent-stuff --checkout %q\n' "$REPO_DIR" >&2
+      exit 1
+    fi
+  done
 fi
 
 # 当前 hook 均为 Codex 专用
