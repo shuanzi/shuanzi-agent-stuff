@@ -67,6 +67,14 @@ cp codex_pets/claude-code-3d-pet-run/final/spritesheet-extended.webp "$PET_DIR/s
 
 调用：`$industry-report`。可通过下方交互式安装器安装，或单独复制技能目录到客户端的 skills 加载路径。
 
+### [wechat-article-workflow-co-gemini](skills/wechat-article-workflow-co-gemini/)
+
+与 Codex 逐篇讨论公众号文章方向，搜集素材后交由 Antigravity CLI 的 `gemini-4-argon-high`（`--effort high`）主笔，再由 Codex 独立核验、用户审阅，交回 Gemini 修订并制作 HTML。保留版本、来源、核验意见和可恢复的 CLI 会话记录；交付 Markdown、可复制正文的 HTML 及按需配图，图片由用户在公众号后台上传。
+
+调用：`$wechat-article-workflow-co-gemini 帮我写一篇公众号文章，先讨论思路`。需要已安装、登录且可调用指定模型的 `agy`；调用脚本仅依赖 Python 3 标准库。可通过下方安装器安装，不包含草稿箱接入或发布。
+
+聚焦测试：`python3 -m unittest discover -s skills/wechat-article-workflow-co-gemini/scripts -p 'test_*.py' -v`。运行完成不等于文章验收；本地预览、公众号粘贴和图片上传分别核对。
+
 ### [codex-thread-orchestration](skills/codex-thread-orchestration/)
 
 在用户明确要求时创建、管理或协调独立 Codex 聊天：可只查已有聊天进度，也可隔离并行写入、跟进依赖并按授权集成结果。

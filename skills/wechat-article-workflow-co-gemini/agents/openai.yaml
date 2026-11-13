@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信公众号文章协作"
+  short_description: "和 Codex 讨论选题与核验事实，由 Gemini 主笔、修订并交付公众号排版"
+  default_prompt: "使用 $wechat-article-workflow-co-gemini 写一篇微信公众号文章，先和我确定读者、观点和文章结构。"
