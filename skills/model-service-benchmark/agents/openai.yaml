@@ -1,0 +1,4 @@
+interface:
+  display_name: "模型服务 Benchmark"
+  short_description: "按科研 Agent 规范规划测试阶段，核查服务、验证容量与持续运行并产出中文报告"
+  default_prompt: "使用 $model-service-benchmark 按规范 revision 85 先确定目标、阶段和预算，核查指定服务，并交付实际完成范围的指标、容量或持续运行结论与中文报告。"

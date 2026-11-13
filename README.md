@@ -47,10 +47,6 @@ cp codex_pets/claude-code-3d-pet-run/final/spritesheet-extended.webp "$PET_DIR/s
 
 ## Skills
 
-以下七个技能的唯一维护源已集中到[Home Repo](/Users/xiquandai/vibecoding/home_repo/.agents/skills/)：`codex-thread-orchestration`、`gpt-pro-dual-agent`、`industry-report`、`model-service-benchmark`、`steelman-dialogue`、`translate-article-to-everything-agent`、`wechat-article-workflow-co-gemini`。本仓库原有 `skills/<名称>` 路径保留为绝对符号链接，修改时编辑 Home 中的实际文件。
-
-这些本地入口依赖 Home Repo；单独克隆本仓库时需一并恢复它。Home 当前没有 remote，不能从本仓库的公开远端自动取得共享技能；GitHub 网页中的符号链接也不等同于普通目录浏览。安装器会识别链接来源并复制完整实际文件，覆盖前检查源目标关系；既有入口若已指向同一来源，则保留原入口。
-
 ### [travel-reimbursement](skills/travel-reimbursement/)
 
 通过逐轮问答收集人员、行程、票据和支付截图，支持从零开始或先提供一批材料，已有记录时从缺项继续。依据中国科学院软件研究所智能软件研究中心的离线资料核对费用并填写原版 Word，关键电子材料补齐后生成可交给组秘核验的 ZIP，另列账号填写、线下签字和纸质原件交接等人工待办。

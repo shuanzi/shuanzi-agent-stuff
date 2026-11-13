@@ -1,0 +1,4 @@
+interface:
+  display_name: "翻译文章到 Everything Agent"
+  short_description: "抓取网页文章、完整翻译为中文并归档到 Everything Agent"
+  default_prompt: "使用 $translate-article-to-everything-agent 抓取并完整翻译这篇文章为简体中文并归档到 Everything Agent：请提供文章 URL。"
