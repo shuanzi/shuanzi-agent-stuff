@@ -76,6 +76,39 @@ class InstallSkillsTest(unittest.TestCase):
         self.assertIn("跳过失效的技能链接", result.stderr)
         self.assertFalse(self.target.exists())
 
+    def test_installs_skill_through_worktree_home_link(self):
+        home = self.root / "共享 Home"
+        self.make_skill(home / ".agents/skills/shared")
+        (self.repo / ".home-repo").symlink_to(home, target_is_directory=True)
+        (self.skills / "shared").symlink_to("../.home-repo/.agents/skills/shared")
+
+        result = self.run_installer()
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual((self.target / "shared/SKILL.md").read_text(), "new")
+        self.assertEqual((self.target / "shared/references/notes.md").read_text(), "nested")
+
+    def test_requires_home_link_before_installing_skills(self):
+        self.make_skill(self.skills / "ordinary")
+        (self.skills / "shared").symlink_to("../.home-repo/.agents/skills/shared")
+
+        result = self.run_installer()
+
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("共享技能入口不可用", result.stderr)
+        self.assertIn("home_paths.py link --repo shuanzi-agent-stuff --checkout", result.stderr)
+        self.assertFalse(self.target.exists())
+
+    def test_installs_selected_regular_skill_without_home_link(self):
+        self.make_skill(self.skills / "ordinary")
+        (self.skills / "shared").symlink_to("../.home-repo/.agents/skills/shared")
+
+        result = self.run_installer(answers="3\n2\n1\ny\n")
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("2) shared", result.stdout)
+        self.assertEqual({entry.name for entry in self.target.iterdir()}, {"ordinary"})
+
     def test_same_source_and_destination_is_a_noop(self):
         source = self.make_skill(self.skills / "same")
         result = self.run_installer(agents=self.repo)
