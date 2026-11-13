@@ -213,9 +213,13 @@ fi
 if [[ "$WANT_SKILLS" == true ]]; then
   SKILL_ITEMS=()
   while IFS= read -r dir; do
-    SKILL_ITEMS+=("$(basename "$dir")")
-  done < <(find "$REPO_DIR/skills" -mindepth 1 -maxdepth 1 -type d | sort)
-  multi_select "可安装的 skills：" SELECTED_SKILLS "${SKILL_ITEMS[@]}"
+    if [[ -L "$dir" && ! -e "$dir" ]]; then
+      printf '跳过失效的技能链接：%s\n' "$dir" >&2
+    elif [[ -d "$dir" && -f "$dir/SKILL.md" ]]; then
+      SKILL_ITEMS+=("$(basename "$dir")")
+    fi
+  done < <(find "$REPO_DIR/skills" -mindepth 1 -maxdepth 1 \( -type d -o -type l \) | sort)
+  multi_select "可安装的 skills：" SELECTED_SKILLS "${SKILL_ITEMS[@]+"${SKILL_ITEMS[@]}"}"
 fi
 
 # 当前 hook 均为 Codex 专用
@@ -249,7 +253,7 @@ fi
 if [[ ${#SKIPPED_HOOKS[@]} -gt 0 ]]; then
   printf '  跳过 hooks：  %s（仅支持 Codex）\n' "${SKIPPED_HOOKS[*]}"
 fi
-echo "同名已安装内容将被覆盖，以本次安装为准。"
+echo "同名已安装内容将被覆盖。已指向同一技能来源的入口会保留。"
 
 read_yes_no "确认安装？[y/N]: " n
 if [[ "$REPLY" != true ]]; then
@@ -263,16 +267,93 @@ fi
 OK_COUNT=0
 FAIL_COUNT=0
 
-# 拷贝 skill 目录（排除 .DS_Store），已存在则先删除实现覆盖
+# 解析父目录中的链接，允许目标目录尚未创建。
+resolve_skill_directory() {
+  local path="$1"
+  local parent name
+  if [[ -d "$path" ]]; then
+    (CDPATH= cd -P -- "$path" && pwd -P)
+    return
+  fi
+  if [[ -e "$path" || -L "$path" ]]; then
+    return 1
+  fi
+  parent="$(dirname -- "$path")" || return 1
+  name="$(basename -- "$path")" || return 1
+  parent="$(resolve_skill_directory "$parent")" || return 1
+  case "$name" in
+    .) printf '%s\n' "$parent" ;;
+    ..) dirname -- "$parent" ;;
+    *) printf '%s/%s\n' "${parent%/}" "$name" ;;
+  esac
+}
+
+# 比较目录身份，覆盖同一目录的不同路径拼写和链接别名。
+is_skill_ancestor() {
+  local ancestor="$1"
+  local path="$2"
+  while true; do
+    if [[ "$ancestor" -ef "$path" ]]; then
+      return 0
+    fi
+    [[ "$path" == / ]] && return 1
+    path="${path%/*}"
+    path="${path:-/}"
+  done
+}
+
 copy_skill() {
   local name="$1"
   local src="$REPO_DIR/skills/$name"
-  local dest="$SKILLS_TARGET/$name"
+  local target_dir dest dest_real path staging
 
-  mkdir -p "$SKILLS_TARGET"
-  rm -rf "$dest"
-  cp -R "$src" "$dest"
-  find "$dest" -name '.DS_Store' -delete
+  if [[ ! -d "$src" || ! -f "$src/SKILL.md" ]]; then
+    printf '技能来源不可用：%s\n' "$src" >&2
+    return 1
+  fi
+  src="$(CDPATH= cd -P -- "$src" && pwd -P)" || return 1
+  target_dir="$(resolve_skill_directory "$SKILLS_TARGET")" || return 1
+  dest="${target_dir%/}/$name"
+  dest_real="$dest"
+  if [[ -d "$dest" ]]; then
+    dest_real="$(CDPATH= cd -P -- "$dest" && pwd -P)" || return 1
+  fi
+  if [[ "$src" -ef "$dest" ]]; then
+    printf '技能已指向同一来源，保留入口：%s\n' "$dest"
+    return 0
+  fi
+  for path in "$dest" "$dest_real"; do
+    if is_skill_ancestor "$path" "$src" || is_skill_ancestor "$src" "$path"; then
+      printf '技能来源与安装目标重叠：%s -> %s\n' "$src" "$path" >&2
+      return 1
+    fi
+  done
+
+  # 先在同一父目录复制并检查，完成后才替换旧版本。
+  mkdir -p -- "$target_dir" || return 1
+  staging="$(mktemp -d "${target_dir%/}/.install-skill.XXXXXX")" || return 1
+  if ! cp -R -- "$src/." "$staging/skill" ||
+     ! find "$staging/skill" -name '.DS_Store' -delete; then
+    rm -rf -- "$staging" || return 1
+    return 1
+  fi
+  if [[ -e "$dest" || -L "$dest" ]]; then
+    if ! mv -- "$dest" "$staging/previous"; then
+      rm -rf -- "$staging" || return 1
+      return 1
+    fi
+  fi
+  if ! mv -- "$staging/skill" "$dest"; then
+    if [[ -e "$staging/previous" || -L "$staging/previous" ]]; then
+      if [[ -e "$dest" || -L "$dest" ]] || ! mv -- "$staging/previous" "$dest"; then
+        printf '无法恢复原技能，请检查备份：%s\n' "$staging/previous" >&2
+        return 1
+      fi
+    fi
+    rm -rf -- "$staging" || return 1
+    return 1
+  fi
+  rm -rf -- "$staging" || return 1
 }
 
 for skill in ${SELECTED_SKILLS[@]+"${SELECTED_SKILLS[@]}"}; do
