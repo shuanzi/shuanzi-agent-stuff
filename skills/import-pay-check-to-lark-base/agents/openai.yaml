@@ -1,4 +1,4 @@
 interface:
   display_name: "支付账单导入飞书 Base"
-  short_description: "自动识别支付账单格式，净额去重后导入飞书 Base 并分类验收"
-  default_prompt: "使用 $import-pay-check-to-lark-base 自动识别这份账单，生成预览并在确认后导入指定飞书 Base。"
+  short_description: "导入微信支付 XLSX 账单，按净额去重，确认后写入飞书 Base 并回读核验"
+  default_prompt: "使用 $import-pay-check-to-lark-base 为这份微信支付 XLSX 生成脱敏预览，待我确认写入范围后导入指定飞书 Base 并核验结果。"
